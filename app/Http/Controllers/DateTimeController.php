@@ -25,7 +25,7 @@ class DateTimeController extends Controller
         $days = $startDate->diffInDays($endDate);
 
         DateApiCall::create([
-            'contactid' => 1,
+            'contactid' => auth()->user()->contactid,
             'action' => 'weeks',
             'gap' => $days,
             'start_date' => $date['start_date'],
