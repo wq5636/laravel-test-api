@@ -8,7 +8,8 @@ between two dates, which are both optional to specify timezones for. To access t
 4. Register an account via POST "name, email, password, password_confirmation" to http://{host}:{port}/api/register. Once successful, it would return a private token for accessing the functions.
 5. By default, a token does not expire until logging out by POST "bearer token" to http://127.0.0.1:8000/api/logout.
 6. The expiration time of a token can be set by modifying config/sanctum.php: set 'expiration' => n seconds (default null).
-7. To acquire a new token, log in to your account by POST "email, password" to http://127.0.0.1:8000/api/login.
+7. The rate limit of API call can be set in RouteServiceProvider.php. 
+8. To acquire a new token, log in to your account by POST "email, password" to http://127.0.0.1:8000/api/login.
 
 To use the API, POST the private token, with 
 - start_date (required; must be a date format using PHP standard)
